@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/style_result.css"/>
+    <title>Thesis</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="https://js.arcgis.com/4.22/esri/themes/light/main.css" />
+    <script src="https://js.arcgis.com/4.22/"></script>
+  
+    <script>
+      require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer","esri/views/layers/LayerView","esri/rest/support/Query","esri/webmap/background/ColorBackground"], (Map, MapView, FeatureLayer, LayerView, Query,WebmapColorBackground) => {
+        const map = new Map({
+          basemap: null,
+          ground: {
+          surfaceColor: [226, 240, 255]
+          }
+        });
+        
+        const view = new MapView({
+          container: "viewDiv",
+          map: map,
+          zoom: 13,
+          highlightOptions: {
+            color: [255, 241, 58],
+            fillOpacity: 0.4
+          },
+          popup: {
+            highlightEnabled: true
+          },
+          extent: {
+            // autocasts as new Extent()
+            xmin: 486600,
+            ymin: 6801106,
+            xmax: 486693,
+            ymax: 6801480,
+            spatialReference: 102100
+          }
+        });
+        const featureLayer = new FeatureLayer({
+          url: "https://services3.arcgis.com/jR9a3QtlDyTstZiO/arcgis/rest/services/Map11111/FeatureServer/10",
+          outFields: ["NAME","ObjectID"]
+        });
+        map.add(featureLayer);
+        let highlightSelect;
+        view.whenLayerView(featureLayer).then(function(LayerView) {
+        let query_rooms = featureLayer.createQuery();
+        query_rooms.where = "Name = '{{room_name}}'";
+        featureLayer.queryFeatures(query_rooms).then(function(result){
+          if (highlightSelect) {
+            highlightSelect.remove();
+            }
+          highlightSelect = LayerView.highlight(result.features);
+
+          view.goTo(
+                  {
+                    target: result.features,
+                    tilt: 10,
+                    zoom: 6
+                  },
+                  {
+                    duration: 2000,
+                    easing: "in-out-expo"
+                  }
+                )
+          })
+        });
+
+          });
+
+    </script>
+
+  </head>
+
+   <body>
+    <h2>You are in room {{room_name}}</h2>
+    <div id="viewDiv"></div>
+   </body>
+</html>
+
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/styles.css"/>
+    <title>Thesis</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=yes" />
+    <link rel="stylesheet" href="https://js.arcgis.com/4.22/esri/themes/light/main.css" />
+    <script src="https://js.arcgis.com/4.22/"></script>
+
+    <script>
+      require(["esri/Map", "esri/views/MapView", "esri/layers/FeatureLayer"], (Map, MapView, FeatureLayer) => {
+        const map = new Map({
+          basemap: null,
+          ground: {
+          surfaceColor: [226, 240, 255]
+          }
+        });
+        const view = new MapView({
+          container: "viewDiv",
+          map: map,
+          extent: {
+            // autocasts as new Extent()
+            xmin: 486650,
+            ymin: 6801176,
+            xmax: 486583,
+            ymax: 6801380,
+            spatialReference: 102100
+          }
+        });
+
+        const featureLayer = new FeatureLayer({
+          url: "https://services3.arcgis.com/jR9a3QtlDyTstZiO/arcgis/rest/services/Map11111/FeatureServer/10"
+        });
+        map.add(featureLayer);
+      });
+    </script>
+
+  </head>
+
+   <body>
+    <h1>Upload your point cloud</h1>
+    <h2>Faculty of Architecture and the Built Environment</h2>
+    <div id="viewDiv"></div>
+      <form action = "http://localhost:5000/uploader" method = "POST" 
+         enctype = "multipart/form-data">
+         <input type = "file" name = "file" class="custom-file-input" />
+         <input type = "submit" name = "Locate" class="custom-file-submit"/>
+      </form>   
+   </body>
+</html>
+
+

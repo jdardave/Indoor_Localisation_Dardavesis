@@ -1,0 +1,29 @@
+body {
+  background-color: rgb(14, 195, 240);
+    }
+    
+    h2 {
+      color: navy;
+      text-align: center;
+      display: inline-block;
+      vertical-align: middle;
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%)
+    }
+  
+  
+    #viewDiv {
+      padding: 0em;
+      margin: 0;
+      height: 60%;
+      width: 90%;
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+      border-style: none; 
+    }
