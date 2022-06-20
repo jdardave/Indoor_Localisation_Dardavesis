@@ -215,15 +215,6 @@ def main1(file_name):
     result.append(long_string)
     print(result)
     
-    # counter=
-
-    # for i in range(len(result)-1):
-    #     if len(result)>1:
-    #         query_result=layer.query(where = "FirstStopName='{}' and LastStopName='{}'".format(result[i],result[i+1]))
-    #         counter=query_result.features[0].get_value(field_name ="RouteUsed")
-    #         layer.calculate(where = "FirstStopName='{}' and LastStopName='{}'".format(result[i],result[i+1]), calc_expression = [{"field": "RouteUsed","value": "{}".format(counter+1)},{"field": "User_ID","value": "{}".format(id)}],
-    #         return_edit_moment=True,sessionid=id,future=True)
-
 
     if len(result)>1:
             query_result=layer.query(where = "FirstStopName='{}' and LastStopName='{}'".format(result[-2],result[-1]))
