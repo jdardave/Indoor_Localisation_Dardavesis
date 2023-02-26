@@ -4,8 +4,9 @@ from mpl_toolkits import mplot3d
 # %matplotlib Notebook
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 
-f = open("../back_end/data/808_colored.txt", 'r')
+f = open(os.path.join("..", "back_end", "data", "pc_centers", "808_colored.txt"), 'r')
 
 fig = plt.figure()
 figsize=(3,4)

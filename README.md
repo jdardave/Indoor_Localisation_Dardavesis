@@ -16,7 +16,14 @@
   - point_cloud_registration.py: Includes different combinations of global and local registration techniques from point cloud data. The data in the folders pix4d_database and pix4d_user can be used to reproduce results from point clouds that were acquired with Pix4d Catch, while the ones in database and user folders to reproduce results from point clouds that were acquired with SiteScape app.
   - scatter.py: Code that creates scatter plots from the coordinates of the centers of a reference and different user point clouds after registration for a specific room
 
+### Installation and dependencies
 
+To execute the Python code, OpenCV, numpy and matplotlib are required. They can be installed via pip in a python virtual environment with the following commands:
+```
+python -m venv env
+source env/bin/activate
+pip install -r requirements.txt
+```
 
 
 
