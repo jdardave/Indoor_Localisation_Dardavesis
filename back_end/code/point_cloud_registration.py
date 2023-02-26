@@ -165,7 +165,7 @@ def main():
     voxel_size=0.15
     # pcd_user=crop_user_pc(pcd_user)
     # o3d.visualization.draw_geometries([pcd_user])
-    pcd_user = o3d.io.read_point_cloud("../back_end/data/user/808.ply") # In case the point clouds from pix4d are used this path changes to "../back_end/data/pix4d_user/"
+    pcd_user = o3d.io.read_point_cloud("../back_end/data/user/808-60.ply") # In case the point clouds from pix4d are used this path changes to "../back_end/data/pix4d_user/"
     # print(len(np.asarray(pcd_user.points)))
     # trans_init = np.asarray([[0.0, 0.0, 1.0, 0.0], [1.0, 0.0, 0.0, 0.0],
     #                          [0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 0.0, 1.0]])
@@ -213,7 +213,7 @@ def main():
         # print(evaluation)
         # print("Inlier Fitness of {}: {:.3f}".format(pc_db,result_icp.fitness))
         # print("Inlier RMSE: {:.3f}".format(result_icp.inlier_rmse))
-        pc_db=pc_db.split('\\') # or pc_db = pc_db.split('/') for Mac users
+        pc_db=pc_db.split(os.sep)
         pc_db_1=pc_db[1].split('-')
         # print(pc_db_1)
         fitness[str(pc_db_1[0])]=result_icp.fitness
