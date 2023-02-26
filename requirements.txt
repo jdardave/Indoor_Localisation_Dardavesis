@@ -1,14 +1,4 @@
-## Packages to be installed
-import glob 
-import time
-import copy
-import sys
-import os
-import numpy as np
-from matplotlib import colors
-import cv2 as cv
-from cv2 import threshold
-from matplotlib import pyplot as plt
-import open3d as o3d
-from typing import Sequence
-from difflib import SequenceMatcher
+numpy>=1.19.2
+matplotlib>=3.3.2
+opencv-python>=4.5
+open3d>=0.16.1
