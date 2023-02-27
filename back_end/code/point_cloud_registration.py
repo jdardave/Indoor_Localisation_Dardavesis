@@ -165,7 +165,7 @@ def main():
     voxel_size=0.15
     # pcd_user=crop_user_pc(pcd_user)
     # o3d.visualization.draw_geometries([pcd_user])
-    pcd_user = o3d.io.read_point_cloud(os.path.join("..", "back_end", "data", "user", "808-30.ply")) # In case the point clouds from pix4d are used this path changes to "../back_end/data/pix4d_user/"
+    pcd_user = o3d.io.read_point_cloud(os.path.join("..", "back_end", "data", "user", "560-30.ply")) # In case the point clouds from pix4d are used this path changes to "../back_end/data/pix4d_user/"
     # print(len(np.asarray(pcd_user.points)))
     # trans_init = np.asarray([[0.0, 0.0, 1.0, 0.0], [1.0, 0.0, 0.0, 0.0],
     #                          [0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 0.0, 1.0]])
