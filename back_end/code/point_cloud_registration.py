@@ -162,6 +162,7 @@ def main():
     # demo_crop_geometry()x
     # demo_crop_geometry(pcd_user)
     # o3d.visualization.draw_geometries([pcd_user])
+    np.random.seed(42)  # set the random seed to 42
     voxel_size=0.15
     # pcd_user=crop_user_pc(pcd_user)
     # o3d.visualization.draw_geometries([pcd_user])
