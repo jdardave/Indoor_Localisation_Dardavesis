@@ -16,8 +16,8 @@
   - point_cloud_registration.py: Includes different combinations of global and local registration techniques from point cloud data. The data in the folders pix4d_database and pix4d_user can be used to reproduce results from point clouds that were acquired with Pix4d Catch, while the ones in database and user folders to reproduce results from point clouds that were acquired with SiteScape app.
   - scatter.py: Code that creates scatter plots from the coordinates of the centers of a reference and different user point clouds after registration for a specific room
 ### Hardware
--AMD Ryzen 7 4800H (8 cores), Clock speed of 2.9GHz (max. 4.2GHz)
--internal memory(RAM)}: 16 GB
+- AMD Ryzen 7 4800H (8 cores), Clock speed of 2.9GHz (max. 4.2GHz)
+- Internal memory(RAM)}: 16 GB
 
 ### Installation and dependencies
 
